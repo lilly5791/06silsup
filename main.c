@@ -23,9 +23,15 @@ int max(int a, int b)
 
 int main(int argc, char *argv[]) {
 	
-	sumTwo;
-	square;
-	max;	
+	int sum, sq = 6, m;
+	int a = 2, b = 5;
+	
+	sum = sumTwo(a,b);
+	
+	printf("sumTwo : %d\n", sum);
+	printf("square : %d\n", square(sq));
+	printf("max : %d\n", max(a,b));
+		
 	
 	return 0;
 }
