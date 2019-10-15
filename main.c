@@ -4,19 +4,36 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-int square(int n);
+int calCombination(int n, int r)
+{
+	int high, low;
+	high = factorial(n);
+	low = factorial(r) * factorial(n-r);
+	
+	return (high/low);
+	
+}
+
+int factorial(int a)
+{
+	int res = 1, i;
+	for(i = 1; i <= a; i++)
+		res = res * i;	
+	return res;			
+}
+
 
 int main(void)
 {
-	int i;
-	int max = 45;
+	int n, r, res;
 	
-	srand((unsigned)time(NULL));
+	printf("input n & r:");
+	scanf("%d %d", &n, &r);
 	
-	for(i = 0; i < 6; i++)
-		printf("%d ", 1 + rand()%max); // 나머지연산했으므로 (0-44)+1 중 하나 나옴 
-		
-	return 0;	
-	
+	res = calCombination(n, r);
+	printf("%d combination %d = %d", n, r, res);
+
 }
+
+
 
